@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PREV-FOGO PRO | Sistema de Dimensionamento de Segurança Contra Incêndio</title>
+  <meta name="description" content="Plataforma profissional para cálculo de grau de risco, dimensionamento de brigada de incêndio, CLCB/AVCB e equipamentos obrigatórios conforme normas estaduais." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
+</head>
+<body>
+
+  <!-- Banner exclusivo para Impressão / Exportação PDF -->
+  <div class="print-header-banner">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <h2 style="font-size: 1.5rem; color: #1e293b;">RELATÓRIO TÉCNICO DE PREVENÇÃO CONTRA INCÊNDIO</h2>
+        <p style="font-size: 0.9rem; color: #64748b;">Parecer Preliminar de Enquadramento e Dimensionamento Técnico</p>
+      </div>
+      <div style="text-align: right; font-size: 0.8rem; color: #64748b;">
+        <p><strong>Plataforma:</strong> PREV-FOGO PRO</p>
+        <p><strong>Normas:</strong> ITs Bombeiros / ABNT NBR</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       1. HEADER FIXO COM NAVEGAÇÃO
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="#inicio" class="brand-logo" aria-label="Página Inicial">
+        <div class="brand-icon-wrapper">
+          <svg width="22" height="22" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.527.82-1.122 2.05-1.554 3.414-.423 1.332-.71 2.766-.71 3.938 0 1.257.34 2.378.937 3.25.597.873 1.45 1.45 2.454 1.45 1.004 0 1.857-.577 2.454-1.45.597-.872.937-1.993.937-3.25 0-1.172-.287-2.606-.71-3.938-.432-1.364-1.027-2.594-1.554-3.414a5.617 5.617 0 00-.822-.88zM9 13.5c0 .828.672 1.5 1.5 1.5s1.5-.672 1.5-1.5c0-.62-.375-1.15-.9-1.378-.17-.074-.35-.122-.54-.122-.19 0-.37.048-.54.122-.525.228-.9.758-.9 1.378z" clip-rule="evenodd"/>
+            <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm-7-8a7 7 0 1114 0 7 7 0 01-14 0z" opacity="0.2"/>
+          </svg>
+        </div>
+        <div>
+          <span>PREV<span class="highlight">-FOGO</span></span>
+          <span style="font-weight: 300; font-size: 0.9rem; opacity: 0.85;"> PRO</span>
+        </div>
+        <span class="brand-badge">NBR / CB</span>
+      </a>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="#inicio" class="nav-link active">Início</a>
+        <a href="#calculadora" class="nav-link">Calculadora</a>
+        <a href="#legislacao" class="nav-link">Legislação Estadual</a>
+        <a href="#historico" class="nav-link">Histórico</a>
+        <a href="#sobre" class="nav-link">Diretrizes</a>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="theme-toggle-btn" id="themeToggleBtn" title="Alternar Modo Escuro/Claro" aria-label="Alternar tema">
+          <svg id="themeIcon" width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+        </button>
+
+        <a href="#calculadora" class="btn-header-cta">
+          <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+          </svg>
+          Dimensionar Agora
+        </a>
+
+        <button type="button" class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Abrir menu">
+          <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       2. HERO SECTION IMPACTANTE COM GRADIENTE E TIPOGRAFIA FORTE
+       ========================================================================== -->
+  <section class="hero-section" id="inicio">
+    <div class="container hero-grid">
+      <div>
+        <div class="hero-tag">
+          <svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          Engenharia de Segurança Contra Incêndio & Pânico
+        </div>
+        <h1 class="hero-title">
+          Dimensionamento Técnico <span class="gradient-text">Ágil e Preciso</span> para Edificações
+        </h1>
+        <p class="hero-lead">
+          Classificação automática de Grau de Risco, definição de <strong>CLCB ou AVCB</strong>, dimensionamento de <strong>Brigada de Incêndio</strong> e listagem de equipamentos obrigatórios conforme o Corpo de Bombeiros do seu estado.
+        </p>
+
+        <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+          <a href="#calculadora" class="btn btn-accent" style="padding: 0.9rem 1.8rem; font-size: 1rem;">
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+            Iniciar Dimensionamento Gratuito
+          </a>
+          <a href="#legislacao" class="btn btn-outline" style="color: #ffffff; border-color: rgba(255,255,255,0.3); padding: 0.9rem 1.5rem;">
+            Consultar Normas por UF
+          </a>
+        </div>
+
+        <div class="hero-badges-row">
+          <div class="hero-stat-card">
+            <span class="stat-number">≤ 750m²</span>
+            <span class="stat-label">Critério Base CLCB / PTS</span>
+          </div>
+          <div class="hero-stat-card">
+            <span class="stat-number">11+ UFs</span>
+            <span class="stat-label">Regras Estaduais Atualizadas</span>
+          </div>
+          <div class="hero-stat-card">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Alinhado à NBR 14276</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card Lateral de Apresentação Rápida -->
+      <div class="hero-preview-box">
+        <div class="box-header">
+          <div class="box-title">
+            <svg width="20" height="20" fill="var(--color-accent)" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/>
+            </svg>
+            Diretrizes Rápidas do Corpo de Bombeiros
+          </div>
+          <span style="font-size: 0.75rem; background: rgba(59,130,246,0.25); color: #93c5fd; padding: 0.2rem 0.5rem; border-radius: 4px;">Atualizado 2026</span>
+        </div>
+
+        <ul class="quick-rules-list">
+          <li>
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <div>
+              <strong style="color: #ffffff;">CLCB (Licença Simplificada):</strong> Edificações com área total construída $\le 750\text{ m}^2$, altura até 12m e baixo/médio risco.
+            </div>
+          </li>
+          <li>
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <div>
+              <strong style="color: #ffffff;">AVCB (Vistoria Completa):</strong> Obrigatório para áreas $> 750\text{ m}^2$ ou alto risco, com exigência de Projeto Técnico e rede de hidrantes.
+            </div>
+          </li>
+          <li>
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <div>
+              <strong style="color: #ffffff;">Brigada de Incêndio (NBR 14276):</strong> Dimensionamento pelo número de funcionários no turno e gravidade da carga de fogo.
+            </div>
+          </li>
+          <li>
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <div>
+              <strong style="color: #ffffff;">Equipamentos Mínimos:</strong> Extintores (ABC/CO2), iluminação de emergência e sinalização fotoluminescente em 100% dos imóveis.
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       3. CALCULADORA: FORMULÁRIO EM GRID RESPONSIVO
+       ========================================================================== -->
+  <main class="calculator-section" id="calculadora">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Calculadora Técnica</span>
+        <h2 class="section-title">Parâmetros do Imóvel e Ocupação</h2>
+        <p class="section-subtitle">
+          Informe os dados da edificação para processar o enquadramento legislativo, requisitos documentais e sistemas de proteção exigidos.
+        </p>
+      </div>
+
+      <div class="calc-wrapper">
+        <form id="fireSafetyForm">
+          <div class="form-grid">
+            <!-- 1. Tipo de Atividade / Ocupação -->
+            <div class="form-group full-width">
+              <label for="selectOccupation" class="form-label">
+                <span>Tipo de Atividade e Ocupação Principal</span>
+                <span class="label-hint">Classificação Decreto Estadual / IT 14</span>
+              </label>
+              <div class="input-with-icon">
+                <svg class="input-icon" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                </svg>
+                <select id="selectOccupation" class="form-control" required>
+                  <optgroup label="Administrativo e Residencial">
+                    <option value="escritorios">D-1: Serviços Profissionais / Escritórios e Consultórios (Carga Baixa ~200 MJ/m²)</option>
+                    <option value="residencial">A-2: Residencial Multifamiliar / Condomínio de Apartamentos (Carga Baixa ~300 MJ/m²)</option>
+                    <option value="educacional">E-1/E-2: Escolas, Cursos e Faculdades (Carga Baixa ~300 MJ/m²)</option>
+                  </optgroup>
+                  <optgroup label="Comercial e Serviços">
+                    <option value="comercial_varejo" selected>C-1/C-2: Comércio Varejista / Supermercados / Lojas (Carga Média ~600 MJ/m²)</option>
+                    <option value="hotelaria">B-1/B-2: Hotéis, Pousadas e Hospedagem (Carga Média ~500 MJ/m²)</option>
+                    <option value="oficinas">G-1/G-2: Oficinas Mecânicas e Concessionárias (Carga Média ~500 MJ/m²)</option>
+                    <option value="reuniao_publico">F-1/F-6: Reunião de Público (Restaurantes, Igrejas, Casas de Shows ~800 MJ/m²)</option>
+                    <option value="saude">H-2/H-3: Hospitais e Clínicas com Internação (Carga Média ~600 MJ/m²)</option>
+                  </optgroup>
+                  <optgroup label="Industrial e Alto Risco">
+                    <option value="industria_leve">I-1/I-2: Indústria Geral / Metalúrgica / Têxtil (Carga Média ~700 MJ/m²)</option>
+                    <option value="deposito_combustivel">J-2/J-3: Depósitos de Materiais Combustíveis e Centros de Distribuição (Carga Alta ~1200 MJ/m²)</option>
+                    <option value="industria_quimica">I-3/M-2: Indústria Química / Solventes / Inflamáveis (Carga Severa ~1600 MJ/m²)</option>
+                    <option value="posto_combustivel">G-4/M-1: Posto de Abastecimento de Combustíveis e GNV (Risco Alto)</option>
+                  </optgroup>
+                </select>
+              </div>
+            </div>
+
+            <!-- 2. Área Construída (m²) -->
+            <div class="form-group">
+              <label for="inputArea" class="form-label">
+                <span>Área Total Construída (m²)</span>
+                <span class="label-hint">Ponto de corte: 750 m²</span>
+              </label>
+              <div class="input-with-icon">
+                <svg class="input-icon" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path>
+                </svg>
+                <input type="number" id="inputArea" class="form-control" value="650" min="10" max="200000" step="5" required />
+                <span class="input-unit">m²</span>
+              </div>
+            </div>
+
+            <!-- 3. Número de Funcionários / Ocupantes -->
+            <div class="form-group">
+              <label for="inputEmployees" class="form-label">
+                <span>Nº de Funcionários / Turno</span>
+                <span class="label-hint">População fixa para Brigada</span>
+              </label>
+              <div class="input-with-icon">
+                <svg class="input-icon" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                </svg>
+                <input type="number" id="inputEmployees" class="form-control" value="25" min="1" max="10000" required />
+                <span class="input-unit">pessoas</span>
+              </div>
+            </div>
+
+            <!-- 4. Estado da Federação (UF) -->
+            <div class="form-group">
+              <label for="selectState" class="form-label">
+                <span>Estado da Federação (UF)</span>
+                <span class="label-hint">Corpo de Bombeiros Militar local</span>
+              </label>
+              <div class="input-with-icon">
+                <svg class="input-icon" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+                <select id="selectState" class="form-control" required>
+                  <optgroup label="Região Sudeste & Sul (Principais)">
+                    <option value="SP" selected>SP - São Paulo (CBMSP / Dec. 63.911)</option>
+                    <option value="RJ">RJ - Rio de Janeiro (CBMERJ / Dec. 42)</option>
+                    <option value="MG">MG - Minas Gerais (CBMMG / Lei 14.130)</option>
+                    <option value="RS">RS - Rio Grande do Sul (CBMRS / Lei Kiss)</option>
+                    <option value="PR">PR - Paraná (CBMPR / NPTs)</option>
+                    <option value="SC">SC - Santa Catarina (CBMSC / Lei 16.157)</option>
+                  </optgroup>
+                  <optgroup label="Demais Estados Atendidos">
+                    <option value="BA">BA - Bahia (CBMBA)</option>
+                    <option value="PE">PE - Pernambuco (CBMPE)</option>
+                    <option value="CE">CE - Ceará (CBMCE)</option>
+                    <option value="DF">DF - Distrito Federal (CBMDF)</option>
+                    <option value="GO">GO - Goiás (CBMGO)</option>
+                  </optgroup>
+                </select>
+              </div>
+            </div>
+
+            <!-- 5. Altura da Edificação / Pavimentos -->
+            <div class="form-group">
+              <label for="inputHeight" class="form-label">
+                <span>Altura da Edificação (Metros)</span>
+                <span class="label-hint">Do piso de saída ao último piso habitável</span>
+              </label>
+              <div class="input-with-icon">
+                <svg class="input-icon" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7l4-4m0 0l4 4m-4-4v18"></path>
+                </svg>
+                <input type="number" id="inputHeight" class="form-control" value="6.0" min="2" max="150" step="0.5" />
+                <span class="input-unit">m</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="button" class="btn btn-outline" id="btnResetForm">
+              <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+              </svg>
+              Restaurar Padrões
+            </button>
+            <button type="submit" class="btn btn-accent" id="btnSubmitForm">
+              <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              Calcular Grau de Risco e Requisitos
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- ==========================================================================
+           4. SEÇÃO DE RESULTADOS EM CARDS ESTILIZADOS
+           ========================================================================== -->
+      <section class="results-wrapper hidden" id="resultsSection" aria-live="polite">
+        <div class="results-header">
+          <div class="results-header-left">
+            <span class="section-tag">Resultado do Dimensionamento</span>
+            <h3 style="font-size: 1.5rem;" id="resultsMainTitle">Parecer Técnico de Proteção Contra Incêndio</h3>
+            <p id="resultsSubheader" style="font-size: 0.95rem;">Enquadramento com base na área construída e ocupação selecionada.</p>
+          </div>
+          <div class="results-actions">
+            <span id="riskBadge" class="risk-badge medio">Grau de Risco: Médio</span>
+            <button type="button" class="btn btn-outline" id="btnSaveCalculation" title="Salvar este cálculo no navegador">
+              <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"></path>
+              </svg>
+              Salvar
+            </button>
+            <button type="button" class="btn btn-secondary" id="btnPrintReport" title="Gerar relatório impresso ou salvar em PDF">
+              <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
+              </svg>
+              Exportar PDF / Imprimir
+            </button>
+          </div>
+        </div>
+
+        <div class="results-grid">
+          <!-- CARD 1 (Featured): Resumo Geral do Enquadramento -->
+          <div class="result-card featured-card">
+            <div class="card-header">
+              <div class="card-icon accent-icon">
+                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="card-title">Enquadramento Geral da Edificação</h4>
+                <p class="card-subtitle">Síntese dos parâmetros de risco e ocupação regulamentada</p>
+              </div>
+            </div>
+
+            <div class="card-content">
+              <div class="meta-stats-grid">
+                <div class="meta-item">
+                  <span class="meta-label">Classificação da Ocupação</span>
+                  <span class="meta-value" id="metaOccupation">C-1 - Comércio Varejista</span>
+                </div>
+                <div class="meta-item">
+                  <span class="meta-label">Carga Calorífica Estimada</span>
+                  <span class="meta-value" id="metaFireLoad">600 MJ/m²</span>
+                </div>
+                <div class="meta-item">
+                  <span class="meta-label">Área / População Fixa</span>
+                  <span class="meta-value" id="metaAreaEmployees">650 m² / 25 funcionários</span>
+                </div>
+                <div class="meta-item">
+                  <span class="meta-label">Regulamento Estadual Base</span>
+                  <span class="meta-value" id="metaStateNorm">Decreto nº 63.911/2018</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 2: Documento Obrigatório do Corpo de Bombeiros (CLCB vs AVCB) -->
+          <div class="result-card">
+            <div class="card-header">
+              <div class="card-icon">
+                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="card-title">Licenciamento no Corpo de Bombeiros</h4>
+                <p class="card-subtitle">Documento oficial exigido para funcionamento legal</p>
+              </div>
+            </div>
+
+            <div class="card-content">
+              <div class="doc-callout clcb" id="docCallout">
+                <div>
+                  <span class="doc-type" id="docTypeLabel">CLCB (Licença Simplificada)</span>
+                  <span class="doc-desc" id="docDesc">Edificação de pequeno/médio porte com trâmite expedito.</span>
+                </div>
+              </div>
+              <ul class="styled-checklist" id="docRequirementsList">
+                <!-- Preenchido via app.js -->
+              </ul>
+            </div>
+          </div>
+
+          <!-- CARD 3: Brigada de Incêndio (NBR 14276 / IT 17) -->
+          <div class="result-card">
+            <div class="card-header">
+              <div class="card-icon accent-icon">
+                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="card-title">Brigada de Incêndio</h4>
+                <p class="card-subtitle">Dimensionamento conforme NBR 14276 e IT Estadual</p>
+              </div>
+            </div>
+
+            <div class="card-content">
+              <div class="meta-stats-grid" id="brigadeStats">
+                <!-- Preenchido via app.js -->
+              </div>
+              <ul class="styled-checklist" id="brigadeDetails">
+                <!-- Preenchido via app.js -->
+              </ul>
+            </div>
+          </div>
+
+          <!-- CARD 4: Equipamentos e Sistemas Obrigatórios -->
+          <div class="result-card">
+            <div class="card-header">
+              <div class="card-icon success-icon">
+                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="card-title">Equipamentos Obrigatórios</h4>
+                <p class="card-subtitle">Sistemas de combate, rotas e aviso precoce</p>
+              </div>
+            </div>
+
+            <div class="card-content">
+              <ul class="styled-checklist" id="equipmentList">
+                <!-- Preenchido via app.js -->
+              </ul>
+            </div>
+          </div>
+
+          <!-- CARD 5: Requisitos Especiais & Gestão Técnica -->
+          <div class="result-card">
+            <div class="card-header">
+              <div class="card-icon">
+                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="card-title">Requisitos Especiais & Conformidade</h4>
+                <p class="card-subtitle">Documentação complementar, laudos e ART</p>
+              </div>
+            </div>
+
+            <div class="card-content">
+              <ul class="styled-checklist" id="specialReqsList">
+                <!-- Preenchido via app.js -->
+              </ul>
+            </div>
+          </div>
+
+          <!-- OBSERVACÃO LEGAL OBRIGATÓRIA -->
+          <div class="legal-disclaimer">
+            <div class="disclaimer-icon">
+              <svg width="24" height="24" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <div class="legal-disclaimer-content">
+              <h4>Aviso Técnico e Consulta ao Corpo de Bombeiros Militar</h4>
+              <p>
+                Os resultados e quantitativos apresentados são estimativas de engenharia em estrita concordância com as Instruções Técnicas vigentes e normas da ABNT. A adequação definitiva, emissão de alvará e habite-se exigem protocolo formal junto ao Corpo de Bombeiros Militar do Estado correspondente, com responsabilidade técnica de engenheiro habilitado munido de ART/RRT.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- ==========================================================================
+       5. BASE LEGISLATIVA POR ESTADO
+       ========================================================================== -->
+  <section class="legislation-section" id="legislacao">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Base Normativa Nacional</span>
+        <h2 class="section-title">Legislação e Portais Oficiais dos Bombeiros</h2>
+        <p class="section-subtitle">
+          Consulte as particularidades normativas, sistemas de protocolo e regras de segurança contra incêndio para cada estado.
+        </p>
+      </div>
+
+      <div class="state-pills-nav" id="statePillsContainer">
+        <!-- Gerado via JavaScript -->
+      </div>
+
+      <div class="state-detail-card" id="stateDetailCard">
+        <!-- Renderizado dinamicamente -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       6. SEÇÃO DE HISTÓRICO LOCAL (LOCALSTORAGE)
+       ========================================================================== -->
+  <section class="history-section" id="historico">
+    <div class="container">
+      <div class="history-header">
+        <div>
+          <span class="section-tag">Armazenamento Seguro</span>
+          <h3 style="font-size: 1.35rem;">Histórico de Cálculos no Navegador</h3>
+          <p style="font-size: 0.875rem;">Seus dimensionamentos recentes ficam salvos localmente (localStorage).</p>
+        </div>
+        <button type="button" class="btn btn-outline" id="btnClearHistory" style="padding: 0.4rem 0.9rem; font-size: 0.85rem;">
+          <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+          </svg>
+          Limpar Histórico
+        </button>
+      </div>
+
+      <div class="history-list" id="historyListContainer">
+        <!-- Preenchido via app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       7. FOOTER INSTITUCIONAL
+       ========================================================================== -->
+  <footer class="site-footer" id="sobre">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-brand">
+            <div class="brand-icon-wrapper" style="width: 32px; height: 32px;">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.527.82-1.122 2.05-1.554 3.414-.423 1.332-.71 2.766-.71 3.938 0 1.257.34 2.378.937 3.25.597.873 1.45 1.45 2.454 1.45 1.004 0 1.857-.577 2.454-1.45.597-.872.937-1.993.937-3.25 0-1.172-.287-2.606-.71-3.938-.432-1.364-1.027-2.594-1.554-3.414a5.617 5.617 0 00-.822-.88zM9 13.5c0 .828.672 1.5 1.5 1.5s1.5-.672 1.5-1.5c0-.62-.375-1.15-.9-1.378-.17-.074-.35-.122-.54-.122-.19 0-.37.048-.54.122-.525.228-.9.758-.9 1.378z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <span>PREV-FOGO <span style="color: var(--color-accent);">PRO</span></span>
+          </div>
+          <p>
+            Plataforma corporativa de engenharia para cálculo de grau de risco, dimensionamento de brigada e conformidade técnica junto ao Corpo de Bombeiros Militar em âmbito nacional.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navegação</h4>
+          <ul class="footer-links">
+            <li><a href="#inicio">Página Inicial</a></li>
+            <li><a href="#calculadora">Calculadora de Risco</a></li>
+            <li><a href="#legislacao">Normas por Estado</a></li>
+            <li><a href="#historico">Histórico de Cálculos</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Normas & Referências</h4>
+          <ul class="footer-links">
+            <li><a href="https://www.corpodebombeiros.sp.gov.br" target="_blank" rel="noopener">CBMSP - São Paulo</a></li>
+            <li><a href="https://www.cbmerj.rj.gov.br" target="_blank" rel="noopener">CBMERJ - Rio de Janeiro</a></li>
+            <li><a href="https://www.bombeiros.mg.gov.br" target="_blank" rel="noopener">CBMMG - Minas Gerais</a></li>
+            <li><a href="https://www.bombeiros.rs.gov.br" target="_blank" rel="noopener">CBMRS - Rio Grande do Sul</a></li>
+            <li><a href="https://www.bombeiros.pr.gov.br" target="_blank" rel="noopener">CBMPR - Paraná</a></li>
+            <li><a href="https://www.cbm.sc.gov.br" target="_blank" rel="noopener">CBMSC - Santa Catarina</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Conformidade</h4>
+          <p style="font-size: 0.8rem; margin-bottom: 0.75rem;">
+            Todas as diretrizes seguem os preceitos da ABNT NBR 14276, NBR 12693, NBR 10898 e Decretos Estaduais de Prevenção e Combate a Incêndio.
+          </p>
+          <span style="display: inline-block; padding: 0.3rem 0.6rem; background: rgba(255,255,255,0.06); border-radius: 4px; font-size: 0.75rem; color: #cbd5e1;">
+            Versão do Sistema: 2.4.0 (2026)
+          </span>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 PREV-FOGO PRO &bull; Engenharia & Prevenção Contra Incêndio. Todos os direitos reservados.
+        </div>
+        <div>
+          Desenvolvido com foco em alta precisão, acessibilidade e conformidade normativa.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
