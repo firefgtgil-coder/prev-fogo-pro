@@ -1,0 +1,21 @@
+{
+  "name": "firesafe-pro",
+  "version": "2.4.0",
+  "description": "FireSafe PRO - Plataforma profissional para controle de emergências, cálculo de grau de risco, matriz de ITs, brigada de incêndio (NBR 14276) e enquadramento legal CLCB/AVCB.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "firesafe",
+    "controle-de-emergencias",
+    "segurança-contra-incendio",
+    "avcb",
+    "clcb",
+    "nbr-14276",
+    "bombeiros"
+  ],
+  "author": "firefgtgil-coder",
+  "license": "MIT"
+}

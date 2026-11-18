@@ -3,23 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PREV-FOGO PRO | Sistema de Dimensionamento de Segurança Contra Incêndio</title>
-  <meta name="description" content="Plataforma profissional para cálculo de grau de risco, dimensionamento de brigada de incêndio, CLCB/AVCB e equipamentos obrigatórios conforme normas estaduais." />
+  <title>FireSafe PRO | Controle de Emergências & Prevenção Contra Incêndio</title>
+  <meta name="description" content="FireSafe PRO - Plataforma profissional de alta precisão para controle de emergências, cálculo de grau de risco, matriz de ITs dos Corpos de Bombeiros, brigada (NBR 14276) e enquadramento legal CLCB/AVCB." />
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
+  <link rel="icon" type="image/png" href="logo.png" />
 </head>
 <body>
 
   <!-- Banner exclusivo para Impressão / Exportação PDF -->
   <div class="print-header-banner">
     <div style="display: flex; justify-content: space-between; align-items: center;">
-      <div>
-        <h2 style="font-size: 1.5rem; color: #1e293b;">RELATÓRIO TÉCNICO DE PREVENÇÃO CONTRA INCÊNDIO</h2>
-        <p style="font-size: 0.9rem; color: #64748b;">Parecer Preliminar de Enquadramento e Dimensionamento Técnico</p>
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <img src="logo.png" alt="Logo Controle de Emergências" style="height: 54px; width: 54px; object-fit: contain; border-radius: 50%;" />
+        <div>
+          <h2 style="font-size: 1.4rem; color: #1e293b; margin: 0; font-weight: 800;">FireSafe PRO &bull; CONTROLE DE EMERGÊNCIAS</h2>
+          <p style="font-size: 0.85rem; color: #64748b; margin: 0.2rem 0 0 0;">Relatório Técnico de Prevenção e Dimensionamento Contra Incêndio</p>
+        </div>
       </div>
       <div style="text-align: right; font-size: 0.8rem; color: #64748b;">
-        <p><strong>Plataforma:</strong> PREV-FOGO PRO</p>
-        <p><strong>Normas:</strong> ITs Bombeiros / ABNT NBR</p>
+        <p style="margin: 0;"><strong>Plataforma:</strong> FireSafe PRO</p>
+        <p style="margin: 0.2rem 0 0 0;"><strong>Normas:</strong> ITs Bombeiros / ABNT NBR</p>
       </div>
     </div>
   </div>
@@ -29,23 +32,19 @@
        ========================================================================== -->
   <header class="site-header">
     <div class="container header-container">
-      <a href="#inicio" class="brand-logo" aria-label="Página Inicial">
-        <div class="brand-icon-wrapper">
-          <svg width="22" height="22" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.527.82-1.122 2.05-1.554 3.414-.423 1.332-.71 2.766-.71 3.938 0 1.257.34 2.378.937 3.25.597.873 1.45 1.45 2.454 1.45 1.004 0 1.857-.577 2.454-1.45.597-.872.937-1.993.937-3.25 0-1.172-.287-2.606-.71-3.938-.432-1.364-1.027-2.594-1.554-3.414a5.617 5.617 0 00-.822-.88zM9 13.5c0 .828.672 1.5 1.5 1.5s1.5-.672 1.5-1.5c0-.62-.375-1.15-.9-1.378-.17-.074-.35-.122-.54-.122-.19 0-.37.048-.54.122-.525.228-.9.758-.9 1.378z" clip-rule="evenodd"/>
-            <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm-7-8a7 7 0 1114 0 7 7 0 01-14 0z" opacity="0.2"/>
-          </svg>
+      <a href="#inicio" class="brand-logo" aria-label="Página Inicial FireSafe PRO">
+        <img src="logo.png" alt="Logo Controle de Emergências" class="brand-logo-img" />
+        <div class="brand-logo-text">
+          <span class="brand-title">Fire<span class="highlight">Safe</span> <span class="brand-badge-pro">PRO</span></span>
+          <span class="brand-sub">CONTROLE DE EMERGÊNCIAS</span>
         </div>
-        <div>
-          <span>PREV<span class="highlight">-FOGO</span></span>
-          <span style="font-weight: 300; font-size: 0.9rem; opacity: 0.85;"> PRO</span>
-        </div>
-        <span class="brand-badge">NBR / CB</span>
+        <span class="brand-badge">NBR / ITs</span>
       </a>
 
       <nav class="main-nav" id="mainNav">
         <a href="#inicio" class="nav-link active">Início</a>
         <a href="#calculadora" class="nav-link">Calculadora</a>
+        <a href="#matriz-its" class="nav-link">Matriz de ITs por Estado</a>
         <a href="#legislacao" class="nav-link">Legislação Estadual</a>
         <a href="#historico" class="nav-link">Histórico</a>
         <a href="#sobre" class="nav-link">Diretrizes</a>
@@ -471,6 +470,25 @@
             </div>
           </div>
 
+          <!-- BANNER DE ACESSO DIRETO À MATRIZ DE TODAS AS ITS -->
+          <div class="matrix-cta-box">
+            <div class="matrix-cta-icon">
+              <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
+              </svg>
+            </div>
+            <div class="matrix-cta-content">
+              <h4>Analisar Todas as ITs Deste Enquadramento no Estado</h4>
+              <p id="matrixCtaDescription">Consulte as exigências legais detalhadas de todas as Instruções Técnicas para esta ocupação e estado selecionado.</p>
+            </div>
+            <button type="button" class="btn btn-accent" id="btnSyncAndGoMatrix">
+              <span>Ver Matriz de ITs</span>
+              <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </button>
+          </div>
+
           <!-- OBSERVACÃO LEGAL OBRIGATÓRIA -->
           <div class="legal-disclaimer">
             <div class="disclaimer-icon">
@@ -489,6 +507,145 @@
       </section>
     </div>
   </main>
+
+  <!-- ==========================================================================
+       4. MATRIZ NORMATIVA COMPLETA DE TODAS AS ITS POR ESTADO E GRAU DE RISCO
+       ========================================================================== -->
+  <section class="its-matrix-section" id="matriz-its">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Análise Normativa Integral por Estado</span>
+        <h2 class="section-title">Matriz Legal de Todas as ITs por Grau de Risco & Estado</h2>
+        <p class="section-subtitle">
+          Consulte o que a legislação do Corpo de Bombeiros Militar de cada estado exige por lei para qualquer grau de risco (ex: <strong>I-3 Alto Risco</strong> em SP, RJ, MG, RS, etc.).
+        </p>
+      </div>
+
+      <!-- Barra de Controle Interativo -->
+      <div class="matrix-control-panel">
+        <div class="matrix-selectors-grid">
+          <!-- Seletor de Estado -->
+          <div class="control-box">
+            <label for="matrixStateSelect" class="control-label">
+              <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+              <span>Estado da Federação (UF)</span>
+            </label>
+            <div class="input-with-icon">
+              <select id="matrixStateSelect" class="form-control matrix-select">
+                <optgroup label="Sudeste & Sul">
+                  <option value="SP" selected>SP - São Paulo (CBMSP / Decreto 63.911)</option>
+                  <option value="RJ">RJ - Rio de Janeiro (CBMERJ / Decreto 42)</option>
+                  <option value="MG">MG - Minas Gerais (CBMMG / Decreto 47.998)</option>
+                  <option value="RS">RS - Rio Grande do Sul (CBMRS / Lei Kiss)</option>
+                  <option value="PR">PR - Paraná (CBMPR / NPTs)</option>
+                  <option value="SC">SC - Santa Catarina (CBMSC / INs)</option>
+                </optgroup>
+                <optgroup label="Centro-Oeste, Nordeste e DF">
+                  <option value="BA">BA - Bahia (CBMBA)</option>
+                  <option value="PE">PE - Pernambuco (CBMPE)</option>
+                  <option value="CE">CE - Ceará (CBMCE)</option>
+                  <option value="DF">DF - Distrito Federal (CBMDF)</option>
+                  <option value="GO">GO - Goiás (CBMGO)</option>
+                </optgroup>
+              </select>
+            </div>
+          </div>
+
+          <!-- Seletor de Ocupação & Grau de Risco -->
+          <div class="control-box">
+            <label for="matrixOccupationSelect" class="control-label">
+              <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+              </svg>
+              <span>Ocupação & Grau de Risco</span>
+            </label>
+            <div class="input-with-icon">
+              <select id="matrixOccupationSelect" class="form-control matrix-select">
+                <optgroup label="Alto Risco (Carga Severa / Inflamáveis)">
+                  <option value="industria_quimica" selected>I-3/M-2: Indústria Química / Solventes / Inflamáveis (Alto Risco)</option>
+                  <option value="deposito_combustivel">J-2/J-3: Depósitos de Materiais Combustíveis e Logística (Alto Risco)</option>
+                  <option value="posto_combustivel">G-4/M-1: Posto de Abastecimento de Combustíveis e GNV (Alto Risco)</option>
+                </optgroup>
+                <optgroup label="Médio Risco (Carga Moderada)">
+                  <option value="comercial_varejo">C-1/C-2: Comércio Varejista / Supermercados / Shoppings (Médio Risco)</option>
+                  <option value="industria_leve">I-1/I-2: Indústria Geral / Têxtil / Metalúrgica (Médio Risco)</option>
+                  <option value="reuniao_publico">F-1/F-6: Reunião de Público / Restaurantes / Casas de Show (Médio Risco)</option>
+                  <option value="hotelaria">B-1/B-2: Serviços de Hospedagem / Hotéis (Médio Risco)</option>
+                  <option value="saude">H-2/H-3: Hospitais e Clínicas com Internação (Médio Risco)</option>
+                  <option value="oficinas">G-1/G-2: Serviços Automotivos e Oficinas (Médio Risco)</option>
+                </optgroup>
+                <optgroup label="Baixo Risco (Carga Leve)">
+                  <option value="escritorios">D-1: Serviços Profissionais / Escritórios e Consultórios (Baixo Risco)</option>
+                  <option value="residencial">A-2: Residencial Multifamiliar / Apartamentos (Baixo Risco)</option>
+                  <option value="educacional">E-1/E-2: Escolas, Cursos e Faculdades (Baixo Risco)</option>
+                </optgroup>
+              </select>
+            </div>
+          </div>
+
+          <!-- Campo de Busca em Tempo Real -->
+          <div class="control-box">
+            <label for="matrixSearchInput" class="control-label">
+              <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+              <span>Buscar por Palavra-chave ou IT</span>
+            </label>
+            <input type="text" id="matrixSearchInput" class="form-control" placeholder="Ex: hidrante, espuma, IT-25, brigada, CMAR, alarme..." />
+          </div>
+        </div>
+
+        <!-- Filtros Rápidos por Categoria e Botões de Ação -->
+        <div class="matrix-filter-tags">
+          <div class="filter-group">
+            <span class="filter-group-label">Filtrar Categoria:</span>
+            <div class="filter-buttons" id="categoryFilterButtons">
+              <button type="button" class="btn-filter active" data-category="all">Todas as ITs</button>
+              <button type="button" class="btn-filter" data-category="extincao">Sistemas de Extinção</button>
+              <button type="button" class="btn-filter" data-category="deteccao">Alarme & Evacuação</button>
+              <button type="button" class="btn-filter" data-category="passiva">Proteção Passiva</button>
+              <button type="button" class="btn-filter" data-category="gestao">Brigada & Gestão</button>
+              <button type="button" class="btn-filter" data-category="especiais">Riscos Especiais</button>
+            </div>
+          </div>
+          <div class="matrix-action-buttons">
+            <button type="button" class="btn btn-outline" id="btnPrintMatrixReport" title="Imprimir checklist de ITs deste enquadramento">
+              <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
+              </svg>
+              Imprimir Matriz de ITs
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card Resumo do Enquadramento da Ocupação no Estado Selecionado -->
+      <div class="matrix-summary-banner" id="matrixSummaryBanner">
+        <!-- Preenchido via app.js -->
+      </div>
+
+      <!-- Barra de Contagem e Legenda -->
+      <div class="matrix-legend-row">
+        <div class="matrix-counter" id="matrixResultsCounter">
+          Carregando Instruções Técnicas...
+        </div>
+        <div class="matrix-legend-items">
+          <span class="legend-badge severo"><span class="legend-dot"></span> Exigência Severa / Alto Risco</span>
+          <span class="legend-badge obrigatorio"><span class="legend-dot"></span> Obrigatório por Lei</span>
+          <span class="legend-badge condicional"><span class="legend-dot"></span> Condicional</span>
+          <span class="legend-badge isento"><span class="legend-dot"></span> Não Aplicável / Isento</span>
+        </div>
+      </div>
+
+      <!-- Grid de ITs Dinâmico -->
+      <div class="matrix-cards-grid" id="matrixCardsGrid">
+        <!-- Renderizado dinamicamente pelo JavaScript -->
+      </div>
+    </div>
+  </section>
 
   <!-- ==========================================================================
        5. BASE LEGISLATIVA POR ESTADO
@@ -546,15 +703,14 @@
       <div class="footer-grid">
         <div class="footer-col">
           <div class="footer-brand">
-            <div class="brand-icon-wrapper" style="width: 32px; height: 32px;">
-              <svg width="18" height="18" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.527.82-1.122 2.05-1.554 3.414-.423 1.332-.71 2.766-.71 3.938 0 1.257.34 2.378.937 3.25.597.873 1.45 1.45 2.454 1.45 1.004 0 1.857-.577 2.454-1.45.597-.872.937-1.993.937-3.25 0-1.172-.287-2.606-.71-3.938-.432-1.364-1.027-2.594-1.554-3.414a5.617 5.617 0 00-.822-.88zM9 13.5c0 .828.672 1.5 1.5 1.5s1.5-.672 1.5-1.5c0-.62-.375-1.15-.9-1.378-.17-.074-.35-.122-.54-.122-.19 0-.37.048-.54.122-.525.228-.9.758-.9 1.378z" clip-rule="evenodd"/>
-              </svg>
+            <img src="logo.png" alt="Logo Controle de Emergências" style="height: 42px; width: 42px; object-fit: contain; border-radius: 50%; background: #ffffff; padding: 2px;" />
+            <div style="display: flex; flex-direction: column; line-height: 1.15;">
+              <span style="font-size: 1.25rem; font-weight: 800;">Fire<span style="color: var(--color-accent);">Safe</span> PRO</span>
+              <span style="font-size: 0.65rem; font-weight: 700; color: #94a3b8; letter-spacing: 0.08em; text-transform: uppercase;">Controle de Emergências</span>
             </div>
-            <span>PREV-FOGO <span style="color: var(--color-accent);">PRO</span></span>
           </div>
           <p>
-            Plataforma corporativa de engenharia para cálculo de grau de risco, dimensionamento de brigada e conformidade técnica junto ao Corpo de Bombeiros Militar em âmbito nacional.
+            Plataforma corporativa de engenharia para controle de emergências, cálculo de grau de risco, matriz de ITs, dimensionamento de brigada e conformidade técnica junto ao Corpo de Bombeiros Militar em âmbito nacional.
           </p>
         </div>
 
@@ -593,7 +749,7 @@
 
       <div class="footer-bottom">
         <div>
-          &copy; 2026 PREV-FOGO PRO &bull; Engenharia & Prevenção Contra Incêndio. Todos os direitos reservados.
+          &copy; 2026 FireSafe PRO &bull; Controle de Emergências & Prevenção Contra Incêndio. Todos os direitos reservados.
         </div>
         <div>
           Desenvolvido com foco em alta precisão, acessibilidade e conformidade normativa.

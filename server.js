@@ -10,18 +10,23 @@ const MIME_TYPES = {
   '.json': 'application/json; charset=utf-8',
   '.png': 'image/png',
   '.jpg': 'image/jpeg',
-  '.svg': 'image/svg+xml'
+  '.svg': 'image/svg+xml',
+  '.ico': 'image/x-icon'
 };
 
 const server = http.createServer((req, res) => {
   let reqPath = req.url.split('?')[0];
-  if (reqPath === '/' || reqPath === '') reqPath = '/index.html';
+
+  // Rota simplificada e direta para / e /firesafe
+  if (reqPath === '/' || reqPath === '' || reqPath === '/firesafe' || reqPath === '/firesafe/') {
+    reqPath = '/index.html';
+  }
 
   const filePath = path.join(__dirname, reqPath);
   fs.readFile(filePath, (err, data) => {
     if (err) {
       res.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
-      res.end('404 Not Found');
+      res.end('404 Not Found - FireSafe PRO');
       return;
     }
     const ext = path.extname(filePath).toLowerCase();
@@ -31,5 +36,8 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(PORT, () => {
-  console.log(`PREV-FOGO PRO server running at http://localhost:${PORT}`);
+  console.log(`🔥 FireSafe PRO | Controle de Emergências`);
+  console.log(`➜ Link Direto: http://localhost:${PORT}/firesafe`);
+  console.log(`➜ Link Raiz:   http://localhost:${PORT}/`);
 });
+
